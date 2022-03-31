@@ -11,11 +11,11 @@
     "copy:images": "copyfiles -u 1 ./src/images/**/* public",
     "copy:html": "copyfiles -u 1 ./src/*.html public",
     "copy": "npm-run-all --parallel copy:*",
-    "watch:icons": "onchange \"./src/icons/**/*\" -- npm run copy:html",
-    "watch:js": "onchange \"./src/js/**/*\" -- npm run copy:html",
-    "watch:images": "onchange \"./src/images/**/*\" -- npm run copy:html",
+    "watch:icons": "onchange \"./src/icons/**/*\" -- npm run copy:icons",
+    "watch:js": "onchange \"./src/js/**/*\" -- npm run copy:js",
+    "watch:images": "onchange \"./src/images/**/*\" -- npm run copy:images",
     "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
-    "watch:sass": "sass  --no-source-map --watch src/scss:public/css",
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
     "watch": "npm-run-all --parallel watch:*",
     "serve": "browser-sync start --server public --files public",
     "start": "npm-run-all copy --parallel watch serve",
@@ -29,6 +29,7 @@
     "cssnano": "^5.0.17",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
+    "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "sass": "^1.49.8"
   }
